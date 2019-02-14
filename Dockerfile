@@ -14,7 +14,7 @@ RUN echo '' > /etc/apt/sources.list.d/stretch-backports.list \
   && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install python3-sphinx make python-pip
+RUN apt-get install -y python3-sphinx make python-pip
 RUN mkdir -p ~/.pip
 RUN echo "[global]" > ~/.pip/pip.conf
 RUN echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" > ~/.pip/pip.conf
