@@ -12,10 +12,12 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
   && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y \
+  && apt-get upgrade -y \
+  && apt-get install -y \
        build-essential \
+       epubcheck \
        apt-utils \
+       git \
        gettext \
        graphviz \
        imagemagick \
@@ -24,7 +26,8 @@ RUN apt-get update \
        python-virtualenv \
        python3-pip \
        python3-dev \
-      #  texlive-full \
+       texlive-full \
+       latexmk \
        python3-sphinx \
   && apt-get autoremove \
   && apt-get clean
