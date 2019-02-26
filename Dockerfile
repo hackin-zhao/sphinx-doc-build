@@ -3,11 +3,6 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Shanghai
 
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse" > /etc/apt/sources.list \
-  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list \
-  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse" >> /etc/apt/sources.list \
-  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
-
 RUN apt-get update \
   && apt-get upgrade -y \
   && apt-get install -y \
