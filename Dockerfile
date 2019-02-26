@@ -2,33 +2,32 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Shanghai
-ENV LANG en_US.UTF-8
-ENV LANGUAGE="en_US:en"
-ENV TZ PST+08
 
-RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse" > /etc/apt/sources.list \
-  && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list \
-  && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse" >> /etc/apt/sources.list \
-  && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse" > /etc/apt/sources.list \
+  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list \
+  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse" >> /etc/apt/sources.list \
+  && echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 RUN apt-get update \
   && apt-get upgrade -y \
   && apt-get install -y \
-       build-essential \
-       epubcheck \
-       apt-utils \
-       git \
-       gettext \
-       graphviz \
-       imagemagick \
-       make \
-       lmodern \
-       python-virtualenv \
-       python3-pip \
-       python3-dev \
-       texlive-full \
-       latexmk \
-       python3-sphinx \
+      build-essential \
+      epubcheck \
+      apt-utils \
+      git \
+      gettext \
+      graphviz \
+      imagemagick \
+      make \
+      lmodern \
+      python-virtualenv \
+      python3-pip \
+      python3 \
+      mercurial \
+      xzdec \
+      texlive-lang-chinese \
+      latexmk \
+      python3-sphinx \
   && apt-get autoremove \
   && apt-get clean
 

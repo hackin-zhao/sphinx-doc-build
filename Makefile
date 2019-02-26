@@ -1,10 +1,10 @@
-## keenon_ros_build docker makefile
+## sphinx_doc_build docker makefile
 
 build:
-	docker build --rm --force-rm -t ros_wiki_build .
+	docker build --rm --force-rm -t sphinx_doc_build .
 
 run:
-	docker run --rm ros_wiki_build
+	docker run --rm sphinx_doc_build
 
 test:
-	docker run --rm=true -i -t ros_wiki_build /bin/bash
+	docker run --rm=true -i -t sphinx_doc_build /bin/bash
